@@ -1,0 +1,52 @@
+LED Controller Address = 0x02
+
+Packets are variable length.
+First byte is the controller address.
+Second byte is the packet length - 0 based.
+Last byte is a varification packet of 0xFF.
+
+
+
+Functions
+
+0x01 = turn on
+
+byte0 = address
+byte1 = packet length
+byte2 = 0x01
+byte3 = endpacket = 0xFF
+
+
+
+0x02 = turn off
+
+byte0 = address
+byte1 = packet length
+byte2 = 0x02
+byte3 = endpacket = 0xFF
+
+
+
+0x03 = set led channel
+
+byte0 = address
+byte1 = packet length
+byte2 = 0x03
+byte3 = channel select
+byte4 = red channel low byte
+byte5 = red channel high byte
+byte6 = green channel low byte
+byte7 = green channel high byte
+byte8 = blue channel low byte
+byte9 = blue channel byte
+byte10 = endpacket = 0xFF
+
+
+
+0x04 = set time of day
+
+byte0 = address
+byte1 = packet length
+byte2 = 0x04
+byte3 = time in hours 0x00 to 0x17
+byte4 = endpacket = 0xFF
